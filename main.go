@@ -13,6 +13,7 @@ func main()  {
 			http.FileServer(http.Dir("./static"))))
 
 	http.HandleFunc("/file/upload",handler.UploadHandler)
+	http.HandleFunc("/file/upload/suc",handler.UploadsucHandler)
 	err:= http.ListenAndServe(":8080",nil)
 	if err == nil{
 		fmt.Println("err",err)

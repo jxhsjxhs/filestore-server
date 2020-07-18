@@ -7,7 +7,7 @@ import (
 )
 
 func main()  {
-
+	//提供静态文件中的css以及js访问
 	http.Handle("/static/",
 		http.StripPrefix("/static/",
 			http.FileServer(http.Dir("./static"))))

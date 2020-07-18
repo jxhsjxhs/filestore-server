@@ -10,6 +10,7 @@ import (
 
 func UploadHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
+	//直接访问
 	data,err := ioutil.ReadFile("./static/view/index.html")
 	if err !=nil{
 		fmt.Println("err",err)
@@ -17,6 +18,7 @@ func UploadHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	io.WriteString(w,string(data))
 	} else if  r.Method =="POST"{
+	//post提交
 		file,head,err := r.FormFile("file")
 		if err !=nil{
 			fmt.Println("err",err)
